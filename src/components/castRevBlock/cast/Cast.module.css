@@ -1,0 +1,19 @@
+.CastWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+}
+
+.CastItem {
+  max-width: 250px;
+  background-color: #e4e1eb;
+  & > div {
+    padding-left: 20px;
+  }
+}
+.actorname {
+  font-weight: 700;
+  font-size: 20px;
+}

@@ -1,0 +1,36 @@
+.filminfoWrap {
+  display: flex;
+  /* max-height: 400px; */
+  padding: 30px;
+  gap: 30px;
+
+  & > a {
+    width: 70px;
+    height: 30px;
+    background-color: #d0c3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+  }
+  & > a:hover {
+    background-color: #a69cbe;
+  }
+}
+.filmInfo {
+  display: flex;
+  max-height: 400px;
+  padding: 30px;
+  gap: 20px;
+  & > img {
+    max-width: 350px;
+    max-height: 400px;
+  }
+  & > ul {
+    overflow: auto;
+    max-width: 500px;
+  }
+}
