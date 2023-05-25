@@ -12,7 +12,7 @@ export default function FilmDetails() {
   const [movieInfo, setMovieInfo] = useState(null);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
+
   useEffect(() => {
     setIsLoading(true);
     getMovieDetails(id)
@@ -35,9 +35,11 @@ export default function FilmDetails() {
             backLinkLocationRef={backLinkLocationRef.current}
           />
           <AdditionalInformationWrap />
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
+          {isLoading && (
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          )}
         </>
       ) : (
         <h1>No information about this film</h1>
