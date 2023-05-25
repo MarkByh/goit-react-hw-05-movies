@@ -29,6 +29,7 @@ export default function FilmDetails() {
       {movieInfo ? (
         <>
           <FilmInfo
+            id={id}
             movieInfo={movieInfo}
             backLinkLocationRef={backLinkLocationRef.current}
           />

@@ -8,16 +8,13 @@ export default function FilmInfo({ movieInfo, backLinkLocationRef }) {
     ? `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`
     : notFoundImage;
 
-  const rate = movieInfo.vote_average
-    ? Math.ceil(movieInfo.vote_average * 10)
-    : 0;
-
+  const rate = Math.ceil(movieInfo.vote_average * 10);
+  const genresList = () => movieInfo.genres.map(genre => genre.name).join(', ');
   return (
     <div className={style.filminfoWrap}>
       <NavLink to={backLinkLocationRef}> Go back</NavLink>
       <div className={style.filmInfo}>
         <img src={image} alt={movieInfo.title} />
-
         <ul>
           <li>
             <h2>{movieInfo.original_title}</h2>
@@ -29,11 +26,7 @@ export default function FilmInfo({ movieInfo, backLinkLocationRef }) {
           </li>
           <li>
             <h3>Genres</h3>
-            <p>
-              {movieInfo.genres?.map(({ name }) => (
-                <span>{name} </span>
-              ))}
-            </p>
+            <p>{genresList()}</p>
           </li>
         </ul>
       </div>
@@ -41,7 +34,7 @@ export default function FilmInfo({ movieInfo, backLinkLocationRef }) {
   );
 }
 FilmInfo.propTypes = {
-  filmDetails: PropTypes.object.isRequired,
-  backLinkLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  movieInfo: PropTypes.object.isRequired,
+  backLinkLocationRef: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
     .isRequired,
 };

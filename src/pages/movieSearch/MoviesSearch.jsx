@@ -51,9 +51,6 @@ const MoviesSearch = () => {
     <div>
       <div className={style.searchbar}>
         <form onSubmit={handleSubmit} className={style.searchForm}>
-          <button type="submit" className={style.searchFormbutton}>
-            <span className={style.searchFormButtonlabel}></span>
-          </button>
           <input
             className={style.SearchForminput}
             type="text"
@@ -62,6 +59,9 @@ const MoviesSearch = () => {
             autoFocus
             placeholder="Search movies"
           />
+          <button type="submit" className={style.searchFormbutton}>
+            Search
+          </button>
         </form>
       </div>
 
