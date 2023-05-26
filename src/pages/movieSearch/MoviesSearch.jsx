@@ -4,12 +4,12 @@ import { searchMovies } from '../../service/api';
 import Loader from '../../components/loader/Loader';
 import { FilmList } from 'components/FilmList/FilmList';
 import { useState, useEffect } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesSearch = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const location = useLocation();
+
   const [searchParams, setSearchParams] = useSearchParams({});
   const movieName = searchParams.get('movieName') ?? '';
 
@@ -68,7 +68,7 @@ const MoviesSearch = () => {
       <div className={style.SearchList}>
         {isLoading && <Loader />}
 
-        {movies.length > 0 && <FilmList movies={movies} location={location} />}
+        {movies.length > 0 && <FilmList movies={movies} />}
       </div>
     </div>
   );

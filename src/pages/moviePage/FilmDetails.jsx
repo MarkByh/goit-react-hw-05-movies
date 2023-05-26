@@ -21,8 +21,8 @@ export default function FilmDetails() {
       })
       .catch(error => {
         console.log(error);
-      })
-      .finally(setIsLoading(false));
+      });
+    // .finally(setIsLoading(false));
   }, [id]);
 
   return (
