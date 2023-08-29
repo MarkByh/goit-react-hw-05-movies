@@ -23,15 +23,15 @@ export default function FilmInfo({
     getMoviesVideo(id)
       .then(response => {
         if (response.results.length === 0) {
-          // setMovieVideo(null);
+          setMovieVideo(null);
         }
-        // setMovieVideo(response.results[0].key);
+        setMovieVideo(response.results[0].key);
       })
       .catch(error => {
         console.log(error);
       });
     // .finally(setIsLoading(false));
-  }, [id]);
+  }, [id, setMovieVideo]);
 
   const image = movieInfo.poster_path
     ? `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`
