@@ -1,19 +1,47 @@
 .CastWrap {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 10px;
   padding: 10px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  width: 90.5%;
+  margin-left: 50px;
+  /* &:after {
+    content: '';
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    will-change: opacity;
+    pointer-events: none;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0,
+      #fff 100%
+    );
+  } */
 }
 
 .CastItem {
-  max-width: 250px;
-  background-color: #e4e1eb;
+  /* max-width: 250px; */
+  font-size: 14px;
+  background-color: white;
+  border-radius: 20px;
   & > div {
-    padding-left: 20px;
+    padding-left: 10px;
   }
+  box-shadow: -3px 6px 8px -5px rgba(66, 68, 90, 1);
+  box-shadow: -3px 6px 8px -5px rgba(0, 0, 0, 0.592);
 }
 .actorname {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
+}
+.castImg {
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }

@@ -1,0 +1,51 @@
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  display: flex;
+  justify-content: center;
+
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.player {
+  margin: 0 auto;
+}
+.playerdiv {
+  width: 1280px;
+  max-height: 720px;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.button {
+  cursor: pointer;
+  font-size: 20px;
+  width: 50px;
+  color: antiquewhite;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    color: rgb(173, 162, 148);
+  }
+}
+.nav {
+  display: flex;
+  color: antiquewhite;
+
+  background-color: black;
+  width: 100%;
+  justify-content: space-between;
+}
+.dot {
+  background-color: #fff;
+
+  width: 15px;
+  height: 15px;
+}

@@ -3,6 +3,8 @@
   /* max-height: 400px; */
   padding: 30px;
   gap: 30px;
+  position: relative;
+  color: aliceblue;
 
   & > a {
     width: 70px;
@@ -20,17 +22,62 @@
     background-color: #a69cbe;
   }
 }
+
+.filmImg {
+  object-fit: contain;
+  border-radius: 20px;
+  width: 350px;
+  height: 500px;
+}
 .filmInfo {
   display: flex;
-  max-height: 400px;
-  padding: 30px;
+  /* max-height: 400px; */
+  padding: 100px;
   gap: 20px;
+
   & > img {
-    max-width: 350px;
-    max-height: 400px;
+    /* max-width: 350px;
+    max-height: 400px; */
+    object-fit: cover;
   }
   & > ul {
     overflow: auto;
-    max-width: 500px;
+    max-width: 1000px;
+    font-size: 20px;
   }
+}
+.trailerBtn {
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+
+  padding: 3px 8px 3px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.Information {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.title {
+  margin-bottom: 0;
+}
+.dot {
+  display: flex;
+  width: 5px;
+  height: 5px;
+  background-color: aliceblue;
+  border-radius: 50%;
 }
