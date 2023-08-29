@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, Suspense } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { getMovieDetails, getMoviesVideo } from '../../service/api';
+import { getMovieDetails } from '../../service/api';
 import FilmVideo from 'components/FilmVideo/FilmVideo';
 import Loader from 'components/loader/Loader';
 // import AdditionalInformationWrap from 'components/castRevBlock/castRevBlock';

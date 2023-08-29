@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getSimilar } from 'service/api';
 import { RatingProgressbar } from 'components/rating/rating';

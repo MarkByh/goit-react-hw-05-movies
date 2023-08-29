@@ -4,8 +4,8 @@ import star from 'images/star-full.svg';
 import style from './filmInfo.module.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Cast from 'components/castRevBlock/cast/Cast';
-import Similar from 'components/castRevBlock/similar/Similar';
+// import Cast from 'components/castRevBlock/cast/Cast';
+// import Similar from 'components/castRevBlock/similar/Similar';
 import { useEffect } from 'react';
 
 // import { Outlet, useLocation, useParams } from 'react-router-dom';
@@ -23,9 +23,9 @@ export default function FilmInfo({
     getMoviesVideo(id)
       .then(response => {
         if (response.results.length === 0) {
-          setMovieVideo(null);
+          // setMovieVideo(null);
         }
-        setMovieVideo(response.results[0].key);
+        // setMovieVideo(response.results[0].key);
       })
       .catch(error => {
         console.log(error);
@@ -46,7 +46,7 @@ export default function FilmInfo({
   if (mins < 10) mins = '0' + mins;
   let newDate = new Date(movieInfo.release_date);
 
-  let rezult = hours + 'h' + ' ' + mins + 'm';
+  let rezult = hours + 'h ' + mins + 'm';
 
   const rate = Math.ceil(movieInfo.vote_average * 10);
   const genresList = () => movieInfo.genres.map(genre => genre.name).join(', ');
