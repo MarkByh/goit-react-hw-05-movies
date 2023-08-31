@@ -1,0 +1,100 @@
+.filminfoWrap {
+    display: flex;
+    /* max-height: 400px; */
+    padding: 30px;
+    gap: 30px;
+    position: relative;
+    color: white;
+  
+   
+  }
+  .cnt{
+    color: white;
+     & > a {
+      width: 70px;
+      height: 30px;
+      background-color: #d0c3ee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      text-decoration: none;
+      border-radius: 5px;
+      color: black;
+    }
+    & > a:hover {
+      background-color: #a69cbe;
+    }
+  }
+  .filmImg {
+    object-fit: contain;
+    border-radius: 20px;
+    width: 350px;
+    height: 500px;
+  }
+  .filmInfo {
+    display: flex;
+    /* max-height: 400px; */
+    padding: 100px;
+    gap: 20px;
+  
+    & > img {
+      /* max-width: 350px;
+      max-height: 400px; */
+      object-fit: cover;
+    }
+    & > ul {
+      overflow: auto;
+      max-width: 1000px;
+      font-size: 20px;
+    }
+  }
+  .trailerBtn {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+  
+    padding: 3px 8px 3px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .Information {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .title {
+    margin-bottom: 0;
+  }
+  .dot {
+    display: flex;
+    width: 5px;
+    height: 5px;
+    background-color: aliceblue;
+    border-radius: 50%;}
+    .episodeInfo{
+        width: 100%;
+  position: absolute;
+  bottom: 4px;
+  /* top: 170px;
+  bott */
+  /* left: 20px; */
+  /* padding-left: 20px; */
+  background-color: rgba(57, 54, 54, 0.423);
+    }
+    .episodeDiv{
+        /* display: flex; */
+        width: fit-content;
+        position: relative;
+    }

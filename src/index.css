@@ -17,7 +17,7 @@ body {
 } */
 ::-webkit-scrollbar {
   width: 10px;
-  height: 10px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: lightgrey;
@@ -25,11 +25,14 @@ body {
   border-radius: 100px;
 }
 .container {
-  position: absolute;
-  padding: 250px;
+  color: white;
+  /* position: absolute; */
+  /* margin: 250px; */
+  padding: 15px;
   padding-top: 0;
   padding-bottom: 0;
-  width: 1520px;
+  margin: 0 auto;
+  width: 1200px;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -1,26 +1,26 @@
 import { useRef, useEffect, useState, Suspense } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { getMovieDetails } from '../../service/api';
-import FilmVideo from 'components/Movies/FilmVideo/FilmVideo';
+import { getTvDetails } from '../../service/api';
+// import FilmVideo from 'components/Movies/FilmVideo/FilmVideo';
 import Loader from 'components/Shared/loader/Loader';
 // import AdditionalInformationWrap from 'components/castRevBlock/castRevBlock';
-import FilmInfo from 'components/Movies/FilmPageInfo/FilmPageInfo';
-import Similar from 'components/castRevBlock/similar/Similar';
-import Cast from 'components/castRevBlock/cast/Cast';
-export default function FilmDetails() {
+import TvInfo from 'components/TVShows/TvPageInfo/TvInfo';
+// import Similar from 'components/castRevBlock/similar/Similar';
+// import Cast from 'components/castRevBlock/cast/Cast';
+export default function TvDetails() {
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/Home');
-  const [movieInfo, setMovieInfo] = useState(null);
-  const [movieVideo, setMovieVideo] = useState(null);
+  const [TvInf, setTvInfo] = useState(null);
+  // const [Tvideo, setTvVideo] = useState(null);
   const [modal, setModal] = useState(false);
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-    getMovieDetails(id)
+    getTvDetails(id)
       .then(response => {
-        setMovieInfo(response);
+        setTvInfo(response);
       })
       .catch(error => {
         console.log(error);
@@ -28,32 +28,32 @@ export default function FilmDetails() {
 
     
   }, [id]);
-  console.log(movieVideo);
+  console.log(TvInf);
   return (
     <>
-      {movieInfo ? (
+      {TvInf ? (
         <div style={{ position: 'relative' }}>
-          <FilmInfo
+          <TvInfo
             id={id}
-            movieInfo={movieInfo}
-            movieVideo={movieVideo}
+            TvInfo={TvInf}
+            // movieVideo={Tvideo}
             backLinkLocationRef={backLinkLocationRef.current}
             setModal={setModal}
-            setMovieVideo={setMovieVideo}
+            // setMovieVideo={setTvVideo}
           />
           
           <div className="container">
-            <Cast></Cast>
-            <Similar></Similar>
+            {/* <Cast></Cast>
+            <Similar></Similar> */}
           </div>
           {isLoading && (
             <Suspense fallback={<Loader />}>
               <Outlet />
             </Suspense>
           )}
-          {modal === true ? (
+          {/* {modal === true ? (
             <FilmVideo ky={movieVideo} setModal={setModal}></FilmVideo>
-          ) : null}
+          ) : null} */}
         </div>
       ) : (
         <h1>No information about this film</h1>

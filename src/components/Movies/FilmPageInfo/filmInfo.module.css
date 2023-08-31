@@ -4,9 +4,13 @@
   padding: 30px;
   gap: 30px;
   position: relative;
-  color: aliceblue;
-
-  & > a {
+  color: white;
+  background: radial-gradient(circle, rgba(84, 82, 83, 0.494) 0%, rgba(10, 12, 14, 0.644) 100%),
+ 
+}
+.cnt{
+  color: white;
+   & > a {
     width: 70px;
     height: 30px;
     background-color: #d0c3ee;
@@ -22,7 +26,6 @@
     background-color: #a69cbe;
   }
 }
-
 .filmImg {
   object-fit: contain;
   border-radius: 20px;
@@ -47,7 +50,7 @@
   }
 }
 .trailerBtn {
-  color: aliceblue;
+  color: white;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -78,6 +81,6 @@
   display: flex;
   width: 5px;
   height: 5px;
-  background-color: aliceblue;
+  background-color: white;
   border-radius: 50%;
 }

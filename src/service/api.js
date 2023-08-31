@@ -9,6 +9,11 @@ export const getTrending = async () => {
   const response = await axios.get(`trending/movie/day?api_key=${API_KEY}`);
   return response.data;
 };
+// /trending/tv/day?language=en-US'
+export const getTrendingTv = async () => {
+  const response = await axios.get(`/trending/tv/day?api_key=${API_KEY}`);
+  return response.data;
+};
 
 export const getSimilar = async (id) => {
   const response = await axios.get(`movie/${id}/recommendations?api_key=${API_KEY}&language=en-US&page=1`);
@@ -33,6 +38,12 @@ export const searchMovies = async query => {
 export const getMovieDetails = async id => {
   const response = await axios.get(
     `movie/${id}?api_key=${API_KEY}&language=en-US`
+  );
+  return response.data;
+};
+export const getTvDetails = async id => {
+  const response = await axios.get(
+    `tv/${id}?api_key=${API_KEY}&language=en-US`
   );
   return response.data;
 };

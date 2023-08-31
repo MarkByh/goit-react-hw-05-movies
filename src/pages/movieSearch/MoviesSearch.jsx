@@ -1,8 +1,8 @@
 import style from './Searchbar.module.css';
 import Notiflix from 'notiflix';
 import { searchMovies } from '../../service/api';
-import Loader from '../../components/loader/Loader';
-import { FilmList } from 'components/FilmList/FilmList';
+import Loader from '../../components/Shared/loader/Loader';
+import { FilmList } from 'components/Movies/FilmList/FilmList';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

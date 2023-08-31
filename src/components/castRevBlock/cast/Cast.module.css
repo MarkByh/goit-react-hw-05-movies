@@ -3,12 +3,12 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  gap: 10px;
-  padding: 10px;
+  gap: 5px;
+  padding: 5px;
   overflow-y: auto;
   padding-bottom: 20px;
-  width: 90.5%;
-  margin-left: 50px;
+  /* width: 90.5%; */
+  /* margin-left: 50px; */
   /* &:after {
     content: '';
     width: 60px;
@@ -28,6 +28,7 @@
 
 .CastItem {
   /* max-width: 250px; */
+  color: black;
   font-size: 14px;
   background-color: white;
   border-radius: 20px;
@@ -38,6 +39,7 @@
   box-shadow: -3px 6px 8px -5px rgba(0, 0, 0, 0.592);
 }
 .actorname {
+  color: black;
   font-weight: 700;
   font-size: 16px;
 }

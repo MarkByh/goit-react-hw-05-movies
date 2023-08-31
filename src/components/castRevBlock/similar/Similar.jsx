@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { getSimilar } from 'service/api';
-import { RatingProgressbar } from 'components/rating/rating';
+import { RatingProgressbar } from 'components/Shared/rating/rating';
 import notFoundImage from 'images/Scrnono.png';
 import style from './similar.module.css';
 export default function Similar() {

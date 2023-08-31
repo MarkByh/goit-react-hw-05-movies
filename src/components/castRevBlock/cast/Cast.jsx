@@ -2,19 +2,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getMovieCredits } from '../../../service/api';
-// import notFoundImage from 'images/notFoundImage.png';
 import NoPhoto from 'images/NoPhoto.jpg';
 import style from './Cast.module.css';
 
 export default function Cast() {
   const [castInfo, setCastInfo] = useState([]);
   const { id } = useParams();
-  // let showedCast;
-
-  // if (window.innerWidth <= 1200) {
-  //   showedCast = castInfo.slice(0, 5);
-  // } else showedCast = castInfo.slice(0, 11);
-  // console.log(showedCast);
+  
   useEffect(() => {
     getMovieCredits(id)
       .then(response => {
