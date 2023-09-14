@@ -56,7 +56,7 @@ export default function TvDetails() {
           ) : null} */}
         </div>
       ) : (
-        <h1>No information about this film</h1>
+        <Loader></Loader>
       )}
     </>
   );

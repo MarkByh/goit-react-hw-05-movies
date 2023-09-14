@@ -28,6 +28,7 @@
 
 .CastItem {
   /* max-width: 250px; */
+  width: min-content;
   color: black;
   font-size: 14px;
   background-color: white;

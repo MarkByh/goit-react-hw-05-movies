@@ -2,7 +2,7 @@ import { Oval } from 'react-loader-spinner';
 
 export default function Loader() {
   return (
-    <div style={{ margin: '0 auto' }}>
+    <div style={{ margin: '0 auto', paddingTop: '200px' }}>
       <Oval
         height={80}
         width={80}

@@ -34,4 +34,5 @@
 .movieItem {
   position: relative;
   height: min-content;
+  width: min-content;
 }

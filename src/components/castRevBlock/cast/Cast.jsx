@@ -21,7 +21,7 @@ export default function Cast() {
 
   return (
     <div>
-      <h2>Cast</h2>
+      {/* <h2>Cast</h2> */}
 
       <ul className={style.CastWrap}>
         {castInfo?.map(({ id, name, profile_path, character }) => (
