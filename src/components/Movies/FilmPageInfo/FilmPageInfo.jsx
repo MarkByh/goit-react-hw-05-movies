@@ -51,89 +51,85 @@ export default function FilmInfo({
   const rate = Math.ceil(movieInfo.vote_average * 10);
   const genresList = () => movieInfo.genres.map(genre => genre.name).join(', ');
   return (
-    
+    <div
+      style={{
+        backgroundImage: ` url(${bgImage})`,
+        width: '100%',
+        backgroundRepeat: `no-repeat`,
+        backgroundAttachment: `fixed`,
+        backgroundSize: `cover`,
+      }}
+    >
       <div
+        className={style.filminfoWrap}
         style={{
-          backgroundImage: ` url(${bgImage})`,
-          width: '100%',
-          backgroundRepeat: `no-repeat`,
-          backgroundAttachment: `fixed`,
-          backgroundSize: `cover`,
+          //   background: `radial-gradient(circle, rgba(84,82,83,0.9430147058823529) 0%, rgba(10,12,14,1) 100%)`,
+          background: ` radial-gradient(circle, rgba(84, 82, 83, 0.794) 0%, rgba(10, 12, 14, 0.999) 100%)`,
         }}
       >
-        <div
-          className={style.filminfoWrap}
-          style={{
-          //   background: `radial-gradient(circle, rgba(84,82,83,0.9430147058823529) 0%, rgba(10,12,14,1) 100%)`,
-          background:` radial-gradient(circle, rgba(84, 82, 83, 0.794) 0%, rgba(10, 12, 14, 0.999) 100%)`,
+        <div className={style.cnt}>
+          <NavLink onClick={() => navigate(-1)}> Go back</NavLink>
 
-          }}
-        >
-          <div className={style.cnt}>
-            
-            <NavLink onClick={() => navigate(-1)}> Go back</NavLink>
-  
-            <div className={style.filmInfo}>
-              <img src={image} alt={movieInfo.title} className={style.filmImg} />
-              <ul>
-                <li>
-                  <h2 className={style.title}>
-                    {movieInfo.original_title}
-                    {'   '}
-                    <span style={{ fontWeight: 100, fontSize: 30 }}>
-                      ({newDate.getFullYear()})
-                    </span>
-                  </h2>
-                  <div className={style.Information}>
-                    <p>{movieInfo.release_date}</p>
-                    <div className={style.dot}></div>
-                    <p>{genresList()}</p>
-                    <div className={style.dot}></div>
-                    <p>{rezult}</p>
-                  </div>
-  
-                  <p style={{ marginTop: 0 }}>
-                    {' '}
-                    {rate / 10}/10{' '}
+          <div className={style.filmInfo}>
+            <img src={image} alt={movieInfo.title} className={style.filmImg} />
+            <ul>
+              <li>
+                <h2 className={style.title}>
+                  {movieInfo.original_title}
+                  {'   '}
+                  <span style={{ fontWeight: 100, fontSize: 30 }}>
+                    ({newDate.getFullYear()})
+                  </span>
+                </h2>
+                <div className={style.Information}>
+                  <p>{movieInfo.release_date}</p>
+                  <div className={style.dot}></div>
+                  <p>{genresList()}</p>
+                  <div className={style.dot}></div>
+                  <p>{rezult}</p>
+                </div>
+
+                <p style={{ marginTop: 0 }}>
+                  {' '}
+                  {rate / 10}/10{' '}
+                  <img
+                    src={star}
+                    alt=""
+                    width={15}
+                    height={15}
+                    className={style.playImg}
+                  />{' '}
+                </p>
+              </li>
+              <li>
+                <h3>Overview</h3>
+                <p>{movieInfo.overview}</p>
+              </li>
+              <li>
+                {movieVideo === null ? (
+                  ''
+                ) : (
+                  <button
+                    type="button"
+                    className={style.trailerBtn}
+                    onClick={() => setModal(true)}
+                  >
                     <img
-                      src={star}
+                      src={play}
                       alt=""
-                      width={15}
-                      height={15}
+                      width={35}
+                      height={35}
                       className={style.playImg}
-                    />{' '}
-                  </p>
-                </li>
-                <li>
-                  <h3>Overview</h3>
-                  <p>{movieInfo.overview}</p>
-                </li>
-                <li>
-                  {movieVideo === null ? (
-                    ''
-                  ) : (
-                    <button
-                      type="button"
-                      className={style.trailerBtn}
-                      onClick={() => setModal(true)}
-                    >
-                      <img
-                        src={play}
-                        alt=""
-                        width={35}
-                        height={35}
-                        className={style.playImg}
-                      />
-                      Play Trailer
-                    </button>
-                  )}
-                </li>
-              </ul>
-            </div>
+                    />
+                    Play Trailer
+                  </button>
+                )}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      
+    </div>
   );
 }
 FilmInfo.propTypes = {
